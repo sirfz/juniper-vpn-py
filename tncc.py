@@ -127,12 +127,13 @@ def encode_0cf3(i):
     return encode_packet(0x0013, 1, struct.pack("<I", i))
 
 class tncc(object):
-    def __init__(self, vpn_host):
+    def __init__(self, vpn_host, cj):
         self.vpn_host = vpn_host
 
         self.br = mechanize.Browser()
 
-        self.cj = cookielib.LWPCookieJar()
+        # self.cj = cookielib.LWPCookieJar()
+        self.cj = cj
         self.br.set_cookiejar(self.cj)
 
         # Browser options
