@@ -58,6 +58,15 @@ juniper-vpn.py [-h HOST] [-u USERNAME] [-o OATH] [-c CONFIG] [-s STDIN] \
 	For all other return codes, the external program is simply called again.
 	An external program is required.
 
+Running using ncui wrapper:
+
+Create the ncui executable by running:
+
+gcc -m32 -o ncui wrapper.c -ldl -Wall
+chmod +x ncui
+chmod 0755 ncui
+sudo chown root:root ncui
+
 Running without root or tun access:
 
 openconnect provides two options for running without any special permissions.
